@@ -1,0 +1,26 @@
+name: demo
+version: 0.1.0
+
+authors:
+  - Lee Braiden <leebraid@gmail.com>
+
+# description: |
+#   Short description of demo
+
+dependencies:
+    ecs:
+      path: ..
+
+targets:
+    demo:
+      main: src/main.cr
+
+#   pg:
+#     github: will/crystal-pg
+#     version: "~> 0.5"
+
+# development_dependencies:
+#   webmock:
+#     github: manastech/webmock.cr
+
+# license: MIT

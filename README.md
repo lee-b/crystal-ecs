@@ -44,3 +44,8 @@ Improvements welcome.
 ## Contributors
 
 - [lee-b](https://github.com/lee-b) Lee Braiden - creator, maintainer
+
+
+## Release
+
+[![GitHub release](https://img.shields.io/github/release/lee-b/crystal-ecs.svg)](https://github.com/lee-b/crystal-ecs/releases)

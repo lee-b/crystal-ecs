@@ -1,6 +1,11 @@
+# Demonstrates the use of crystal-ecs to create a pet dog, and
+# activate it via a plugin which doesn't directly know about
+# dogs.
+
 require "ecs"
 require "./plugin"
 
+# Simple Pet Component, with a name
 class Pet < Ecs::Component
     def component()
         Pet
@@ -14,6 +19,8 @@ class Pet < Ecs::Component
     end
 end
 
+# Defines an Component from which all Mammals
+# derive, with abstract, shared behaviours
 abstract class Mammal < Ecs::Component
     def component()
         Mammal
@@ -22,12 +29,16 @@ abstract class Mammal < Ecs::Component
     abstract def noise() : String
 end
 
+# Implements Canine-specific Mammal behaviour
 class Canine < Mammal
     def noise()
         "Bark"
     end
 end
 
+
+# Constructs the world, registering Entities and
+# Components
 def build_world(): Ecs::ComponentRegistry
     registry = Ecs::ComponentRegistry.new
 	
@@ -42,6 +53,9 @@ def build_world(): Ecs::ComponentRegistry
     registry
 end
 
+# Main program entry point; builds the world,
+# then runs all plugins which interact with
+# that world
 def main()
     registry = build_world()
 
